@@ -1,6 +1,14 @@
 # 📸 MediaStream – Dynamic Slideshow for Images & Videos
 
-MediaStream is a real-time media player that automatically plays images and videos from a folder. Perfect for **photo booths, event displays, and digital signage**, it seamlessly updates when new media is added—no need to restart the slideshow! 🎥✨
+MediaStream is a real-time media player that automatically plays images and videos from a folder. 
+Perfect for **photo booths, event displays, and digital signage**, 
+it seamlessly updates when new media is added—no need to restart the slideshow! 🎥✨
+It is programmed in C# WPF .net by S. Ditlefsen.
+
+How it works:
+1. Select folder where your pictures and videoes are located
+2. Select "Start Slideshow". 
+ 
 
 ## 🚀 Features
 - ✅ **Auto-Updating Slideshow** – Instantly plays new images & videos when added.

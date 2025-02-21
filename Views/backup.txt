@@ -1,0 +1,155 @@
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
+using MediaStream.Models;
+
+namespace MediaStream.Views
+{
+    public partial class SlideshowWindow : Window
+    {
+        private readonly MediaManager mediaManager;
+        private readonly DispatcherTimer hideUiTimer;
+        private readonly DispatcherTimer countdownTimer;
+        private int timeRemaining = 5;  // Change image every 5 seconds
+
+        public SlideshowWindow(string folderPath)
+        {
+            InitializeComponent();
+
+
+            /*
+            mediaManager = manager;
+
+            // Initialize the timers before calling LoadMedia
+            hideUiTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+            hideUiTimer.Tick += (s, e) => HideControls();
+
+            countdownTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
+            countdownTimer.Tick += CountdownTimer_Tick;
+
+            // Now load the media
+            LoadMedia(mediaManager.GetCurrentMedia());
+
+            // Start the countdown timer after initialization
+            countdownTimer.Start();*/
+        }
+
+        private void LoadMedia(string filePath)
+        {
+            if (filePath == null) return;
+
+            string extension = System.IO.Path.GetExtension(filePath).ToLower();
+            if (extension == ".jpg" || extension == ".png" || extension == ".heic")
+            {
+                VideoDisplay.Visibility = Visibility.Collapsed;
+                ImageDisplay.Visibility = Visibility.Visible;
+                ImageDisplay.Source = new BitmapImage(new Uri(filePath));
+            }
+            else
+            {
+                ImageDisplay.Visibility = Visibility.Collapsed;
+                VideoDisplay.Visibility = Visibility.Visible;
+                VideoDisplay.Source = new Uri(filePath);
+                VideoDisplay.Play();
+            }
+
+            ResetCountdown();
+        }
+
+        private void ResetCountdown()
+        {
+            timeRemaining = 5;
+            TxtTimer.Text = $"Next in: {timeRemaining}s";
+            countdownTimer.Start();
+        }
+
+        private void CountdownTimer_Tick(object sender, EventArgs e)
+        {
+            timeRemaining--;
+            TxtTimer.Text = $"Next in: {timeRemaining}s";
+
+            if (timeRemaining <= 0)
+            {
+                countdownTimer.Stop();
+                LoadMedia(mediaManager.GetNextMedia());
+            }
+        }
+
+        private void BtnNext_Click(object sender, RoutedEventArgs e)
+        {
+            LoadMedia(mediaManager.GetNextMedia());
+        }
+
+        private void BtnPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            LoadMedia(mediaManager.GetPreviousMedia());
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Window_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            ShowControls();
+            ShowMediaList(); // Show the list of media names
+            hideUiTimer.Start();
+        }
+
+        private void Window_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            HideControls();
+            HideMediaList(); // Hide the list of media names
+        }
+
+        private void ShowControls()
+        {
+            BtnPrevious.Opacity = 1;
+            BtnPrevious.IsHitTestVisible = true;
+
+            BtnNext.Opacity = 1;
+            BtnNext.IsHitTestVisible = true;
+
+            BtnClose.Opacity = 1;
+            BtnClose.IsHitTestVisible = true;
+
+            TxtTimer.Opacity = 1;
+        }
+
+        private void HideControls()
+        {
+            BtnPrevious.Opacity = 0;
+            BtnPrevious.IsHitTestVisible = false;
+
+            BtnNext.Opacity = 0;
+            BtnNext.IsHitTestVisible = false;
+
+            BtnClose.Opacity = 0;
+            BtnClose.IsHitTestVisible = false;
+
+            TxtTimer.Opacity = 0;
+        }
+
+        private void ShowMediaList()
+        {
+            MediaList.Items.Clear(); // Clear any existing items
+
+            // Get a list of all media file paths
+            foreach (var file in mediaManager.GetMediaFiles())
+            {
+                string fileName = System.IO.Path.GetFileName(file); // Get just the file name
+                MediaList.Items.Add(fileName); // Add file name to the list
+            }
+
+            MediaList.Visibility = Visibility.Visible; // Make the list visible
+        }
+
+        private void HideMediaList()
+        {
+            MediaList.Visibility = Visibility.Collapsed; // Hide the list
+        }
+    }
+}

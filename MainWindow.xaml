@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaStream"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#2b2d30">
     <Grid>
+        <Label Content="Media Stream" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+
+        <!-- Select folder -->
+        <Label Content="Select folder:" HorizontalAlignment="Left" Margin="25,60,0,0" VerticalAlignment="Top" Width="246" Foreground="White" FontSize="15"/>
+        <Button Content="Browse..." Name="btnBrowse"  HorizontalAlignment="Left" Margin="140,60,0,0" VerticalAlignment="Top" Click="btnBrowse_Click" FontSize="15"/>
+        <Label Content="" Name="labelFolderSelected" HorizontalAlignment="Left" Margin="25,80,0,0" VerticalAlignment="Top" Width="600" Foreground="White" FontSize="15"/>
+        <!-- //Select folder -->
+
+        <!-- Start Slideshow -->
+        <Button Content="Start slideshow" Name="btnStartSlideshow"  HorizontalAlignment="Left" Margin="25,110,0,0" VerticalAlignment="Top" FontSize="15" Click="btnStartSlideshow_Click"/>
+
+        <!-- //Start Slideshow -->
+
+        <!-- Output -->
+        <Label Content="Label" Name="labelOutput" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Foreground="LightGray" Width="750"/>
+
 
     </Grid>
 </Window>

@@ -1,0 +1,58 @@
+﻿<Window x:Class="MediaStream.Views.SlideshowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaStream.Views"
+        mc:Ignorable="d"
+        Title="SlideshowWindow" 
+        WindowStyle="None" WindowState="Maximized" Background="Black" 
+        MouseMove="Window_MouseMove">
+
+    <Grid>
+        <!-- Media Display -->
+        <Image Name="ImageDisplay" Stretch="Uniform" Visibility="Visible"/>
+        <MediaElement Name="VideoDisplay" LoadedBehavior="Manual" UnloadedBehavior="Stop" Visibility="Collapsed"/>
+
+        <!-- Left Arrow (Hidden by default) -->
+        <Button Name="BtnPrevious" Click="BtnPrevious_Click"
+                Opacity="0" IsHitTestVisible="False"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="100"
+                Background="Transparent" BorderThickness="0">
+            <TextBlock Text="❮" FontSize="50" Foreground="White"/>
+        </Button>
+
+        <!-- Right Arrow (Hidden by default) -->
+        <Button Name="BtnNext" Click="BtnNext_Click"
+                Opacity="0" IsHitTestVisible="False"
+                HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Height="100"
+                Background="Transparent" BorderThickness="0">
+            <TextBlock Text="❯" FontSize="50" Foreground="White"/>
+        </Button>
+
+        <!-- Close Button (Hidden by default) -->
+        <Button Name="BtnClose" Click="BtnClose_Click"
+                Opacity="0" IsHitTestVisible="False"
+                HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"
+                Background="Transparent" BorderThickness="0">
+            <TextBlock Text="✖" FontSize="30" Foreground="White"/>
+        </Button>
+
+        <!-- Timer Display (Hidden by default) -->
+        <TextBlock Name="TxtTimer" Opacity="0" Foreground="White" FontSize="24" Margin="20"
+                   HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                   Background="Black" Padding="10" Text="Next in: 5s"/>
+
+        <!-- Media List Box (Hidden by default) -->
+        <ListBox Name="MediaList" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Margin="10,10,0,0"
+                 Width="200" Height="300" Visibility="Collapsed">
+        </ListBox>
+
+        <!-- Output Label at the bottom left -->
+        <TextBlock Name="textBlockOutput" 
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,20"
+                   Foreground="LightGray" FontSize="16" Background="Black" Padding="5"
+                   Text="Output: Waiting for media..." />
+    </Grid>
+</Window>
