@@ -6,16 +6,16 @@ it seamlessly updates when new media is added—no need to restart the slideshow
 It is programmed in C# WPF .net by S. Ditlefsen.
 
 
-1. [⬇️ Download Exe file](#1-download)
-2. [💡 How it works](#-installation)
-3. [✨ Features](#-installation)
+1. [⬇️ Download Exe file](#1-%EF%B8%8F-download-exe-file)
+2. [💡 How it works](#2--how-it-works)
+3. [✨ Features](#3--features)
 4. [🎯 Use Cases](#4--use-cases)
 5. [🛠 Installation of source code in Visual Studio](#5--installation)
 6. [📂 How to Use](#6--how-to-use)
 7. [⚙️ Create installation file](#7-%EF%B8%8F-create-installation-file)
 8. [📜 License](#8--license)
-9. [🤝 Contributing]#9--contributing)
-10. [10 📬 Contact](#10--contact)
+9. [🤝 Contributing](#9--contributing)
+10. [📬 Contact](#10--contact)
 
 
 ## 1 ⬇️ Download Exe file
