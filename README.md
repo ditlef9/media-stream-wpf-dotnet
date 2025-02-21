@@ -6,19 +6,19 @@ it seamlessly updates when new media is added—no need to restart the slideshow
 It is programmed in C# WPF .net by S. Ditlefsen.
 
 
-1. [⬇️ Download](1-download)
+1. [⬇️ Download Exe file](#1-download)
 2. [💡 How it works](#-installation)
 3. [✨ Features](#-installation)
-4. [🎯 Use Cases](#-installation)
-5. [🛠 Installation](#-installation)
-6. [📂 How to Use](#-installation)
-7. [⚙️ Create installation file](#-installation)
-8. [📜 License](#-how-to-use)
-9. [🤝 Contributing](#-create-installation-file)
-10. [10 📬 Contact](#-license)
+4. [🎯 Use Cases](#4--use-cases)
+5. [🛠 Installation of source code in Visual Studio](#5--installation)
+6. [📂 How to Use](#6--how-to-use)
+7. [⚙️ Create installation file](#7-%EF%B8%8F-create-installation-file)
+8. [📜 License](#8--license)
+9. [🤝 Contributing]#9--contributing)
+10. [10 📬 Contact](#10--contact)
 
 
-## 1 Download 
+## 1 ⬇️ Download Exe file
 
 ![Download](docs/download_24dp_2854C5_FILL0_wght400_GRAD0_opsz24.png) 
 [Download MediaStreamSetup.exe](https://github.com/ditlef9/media-stream-wpf-dotnet/raw/refs/heads/main/Installer/Output/MediaStreamInstaller.exe)
@@ -28,7 +28,7 @@ It is programmed in C# WPF .net by S. Ditlefsen.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-## 2 How it works
+## 2 💡 How it works
 1. Select folder where your pictures and videoes are located and Select "Start Slideshow". 
 ![Select folder](docs/main-window.png)
 
@@ -40,7 +40,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  
 4. Drop new files into the folder and they will be added to the slideshow automatically! Perfect for picture booths!
 
-## 3 🚀 Features
+## 3 ✨ Features
 - ✅ **Auto-Updating Slideshow** – Instantly plays new images & videos when added.
 - ✅ **Supports Multiple Formats** – Works with `.jpg`, `.png`, `.mp4`, `.mov`, etc.
 - ✅ **Smooth Transitions** – Provides a seamless viewing experience.
@@ -54,7 +54,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - **Digital Signage** – Auto-updating promotional content.
 - **Memory Slideshows** – Continuous playback of family photos & videos.
 
-## 5 🛠 Installation
+## 5 🛠 Installation of source code in Visual Studio
 1. **Clone the repository**:
    ```sh
    git clone https://github.com/ditlef9/media-stream-wpf-dotnet.git
